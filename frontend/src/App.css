@@ -1,0 +1,359 @@
+/* LE KÉNE — French pâtisserie, HSR Layout
+   Palette: ivory cream, dusty rose, sage, charcoal, gold
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap");
+
+:root {
+  --cream: #f5f0e8;
+  --cream-deep: #ece4d6;
+  --cream-darker: #e0d6c4;
+  --ink: #2c2c2c;
+  --ink-soft: #3a3632;
+  --rose: #c4907a;
+  --sage: #8b9d77;
+  --gold: #c9a84c;
+  --gold-soft: #d9bd6e;
+  --charcoal: #1c1a18;
+}
+
+html, body, .App {
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.lekene-root {
+  font-family: "Inter", -apple-system, sans-serif;
+  background: var(--cream);
+  color: var(--ink);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.lekene-root .font-serif {
+  font-family: "Cormorant Garamond", "Playfair Display", serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Color utilities (since not in tailwind config) */
+.lekene-root .text-ink { color: var(--ink); }
+.lekene-root .text-ink\/45 { color: rgba(44,44,44,0.45); }
+.lekene-root .text-ink\/50 { color: rgba(44,44,44,0.5); }
+.lekene-root .text-ink\/55 { color: rgba(44,44,44,0.55); }
+.lekene-root .text-ink\/60 { color: rgba(44,44,44,0.6); }
+.lekene-root .text-ink\/65 { color: rgba(44,44,44,0.65); }
+.lekene-root .text-ink\/70 { color: rgba(44,44,44,0.7); }
+.lekene-root .text-ink\/75 { color: rgba(44,44,44,0.75); }
+.lekene-root .bg-ink\/10 { background-color: rgba(44,44,44,0.1); }
+.lekene-root .border-ink\/10 { border-color: rgba(44,44,44,0.1); }
+.lekene-root .text-gold { color: var(--gold); }
+.lekene-root .text-gold\/90 { color: rgba(201,168,76,0.9); }
+.lekene-root .bg-gold\/60 { background-color: rgba(201,168,76,0.6); }
+.lekene-root .border-gold { border-color: var(--gold); }
+.lekene-root .text-cream { color: var(--cream); }
+.lekene-root .text-cream\/45 { color: rgba(245,240,232,0.45); }
+.lekene-root .text-cream\/50 { color: rgba(245,240,232,0.5); }
+.lekene-root .text-cream\/55 { color: rgba(245,240,232,0.55); }
+.lekene-root .text-cream\/60 { color: rgba(245,240,232,0.6); }
+.lekene-root .text-cream\/65 { color: rgba(245,240,232,0.65); }
+.lekene-root .text-cream\/70 { color: rgba(245,240,232,0.7); }
+.lekene-root .text-cream\/80 { color: rgba(245,240,232,0.8); }
+.lekene-root .bg-cream { background-color: var(--cream); }
+.lekene-root .bg-cream-deep:hover, .lekene-root .hover\:bg-cream-deep:hover { background-color: var(--cream-deep); }
+.lekene-root .bg-cream\/15 { background-color: rgba(245,240,232,0.15); }
+.lekene-root .border-cream\/10 { border-color: rgba(245,240,232,0.1); }
+.lekene-root .border-cream\/15 { border-color: rgba(245,240,232,0.15); }
+.lekene-root .bg-cream\/10 { background-color: rgba(245,240,232,0.1); }
+
+/* NAV */
+.lekene-nav-scrolled {
+  background: rgba(245, 240, 232, 0.82);
+  backdrop-filter: saturate(140%) blur(18px);
+  -webkit-backdrop-filter: saturate(140%) blur(18px);
+  border-bottom: 1px solid rgba(44, 44, 44, 0.07);
+}
+
+.lekene-nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+.lekene-nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  height: 1px;
+  width: 0;
+  background: var(--gold);
+  transition: width 0.4s ease;
+}
+.lekene-nav-link:hover {
+  color: var(--ink);
+}
+.lekene-nav-link:hover::after {
+  width: 100%;
+}
+
+/* BUTTONS */
+.lekene-btn-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.85rem 1.5rem;
+  border-radius: 999px;
+  font-size: 0.78rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  font-weight: 500;
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+  white-space: nowrap;
+  cursor: pointer;
+}
+.lekene-btn-primary {
+  background: var(--ink);
+  color: var(--cream);
+  border: 1px solid var(--ink);
+}
+.lekene-btn-primary:hover {
+  background: var(--gold);
+  color: var(--charcoal);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+.lekene-btn-ghost {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid rgba(44, 44, 44, 0.25);
+}
+.lekene-btn-ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+.lekene-btn-ghost-light {
+  background: transparent;
+  color: var(--cream);
+  border: 1px solid rgba(245, 240, 232, 0.25);
+}
+.lekene-btn-ghost-light:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-1px);
+}
+
+/* HERO */
+.lekene-hero {
+  position: relative;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(201, 168, 76, 0.12), transparent 60%),
+    radial-gradient(ellipse at 10% 90%, rgba(196, 144, 122, 0.10), transparent 55%),
+    var(--cream);
+}
+.lekene-hero-grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(44, 44, 44, 0.07) 1px, transparent 0);
+  background-size: 4px 4px;
+  opacity: 0.4;
+  mix-blend-mode: multiply;
+}
+.lekene-hero-glow {
+  position: absolute;
+  right: -200px;
+  top: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(201, 168, 76, 0.18), transparent 70%);
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+/* Hero pastry card visual */
+.lekene-hero-card {
+  position: relative;
+  aspect-ratio: 4 / 5;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow:
+    0 30px 60px -20px rgba(44, 44, 44, 0.35),
+    0 10px 30px -10px rgba(44, 44, 44, 0.2);
+  transform: rotate(1.5deg);
+  transition: transform 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+.lekene-hero-card:hover { transform: rotate(0deg) translateY(-4px); }
+
+.lekene-hero-card-inner {
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.lekene-pastry-art {
+  background:
+    radial-gradient(ellipse at 30% 30%, rgba(217, 189, 110, 0.5), transparent 55%),
+    radial-gradient(ellipse at 70% 70%, rgba(196, 144, 122, 0.45), transparent 60%),
+    radial-gradient(ellipse at 50% 100%, rgba(44, 26, 18, 0.7), transparent 55%),
+    linear-gradient(135deg, #3d2a1f 0%, #1c1109 60%, #0d0805 100%);
+}
+.lekene-pastry-art::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 20% 35%, rgba(255, 230, 170, 0.18) 0%, transparent 12%),
+    radial-gradient(circle at 60% 55%, rgba(255, 220, 160, 0.25) 0%, transparent 14%),
+    radial-gradient(circle at 40% 75%, rgba(255, 200, 140, 0.18) 0%, transparent 11%),
+    radial-gradient(circle at 80% 25%, rgba(255, 240, 200, 0.2) 0%, transparent 10%);
+}
+.lekene-pastry-art::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, transparent 30%, rgba(0, 0, 0, 0.55) 100%);
+}
+
+/* Chips */
+.lekene-hero-chip {
+  position: absolute;
+  background: var(--cream);
+  padding: 0.7rem 1.2rem;
+  border-radius: 999px;
+  box-shadow: 0 10px 30px -10px rgba(44, 44, 44, 0.25);
+  border: 1px solid rgba(44, 44, 44, 0.06);
+  font-size: 1rem;
+  animation: lekene-float 6s ease-in-out infinite;
+}
+.lekene-hero-chip-1 {
+  top: 8%;
+  left: -10%;
+  transform: rotate(-6deg);
+  animation-delay: 0s;
+}
+.lekene-hero-chip-2 {
+  bottom: 10%;
+  right: -8%;
+  transform: rotate(4deg);
+  animation-delay: 1.5s;
+}
+@keyframes lekene-float {
+  0%, 100% { transform: translateY(0) rotate(var(--r, -6deg)); }
+  50% { transform: translateY(-8px) rotate(var(--r, -6deg)); }
+}
+.lekene-hero-chip-1 { --r: -6deg; }
+.lekene-hero-chip-2 { --r: 4deg; }
+
+/* SECTIONS */
+.lekene-section {
+  background: var(--cream);
+  position: relative;
+}
+.lekene-section-cream-deep {
+  background: var(--cream-deep);
+  position: relative;
+}
+.lekene-section-dark {
+  background: var(--charcoal);
+  color: var(--cream);
+  position: relative;
+}
+.lekene-section-dark::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle at 1px 1px, rgba(245, 240, 232, 0.04) 1px, transparent 0);
+  background-size: 4px 4px;
+  pointer-events: none;
+}
+
+/* MENU rows */
+.lekene-menu-row {
+  border-bottom: 1px dashed rgba(245, 240, 232, 0.13);
+  transition: padding 0.4s ease;
+}
+.lekene-menu-row:hover {
+  padding-left: 0.5rem;
+  border-bottom-color: rgba(201, 168, 76, 0.4);
+}
+
+/* MAP */
+.lekene-map-card {
+  position: relative;
+  display: block;
+  aspect-ratio: 5 / 4;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -20px rgba(44, 44, 44, 0.3);
+  border: 1px solid rgba(44, 44, 44, 0.08);
+}
+.lekene-map-iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  filter: grayscale(0.25) contrast(0.95) sepia(0.1);
+  transition: filter 0.5s ease;
+}
+.lekene-map-card:hover .lekene-map-iframe {
+  filter: grayscale(0) contrast(1) sepia(0);
+}
+.lekene-map-pin {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1rem;
+  background: var(--cream);
+  color: var(--ink);
+  border-radius: 999px;
+  box-shadow: 0 10px 25px -10px rgba(44, 44, 44, 0.4);
+  border: 1px solid rgba(44, 44, 44, 0.08);
+  font-weight: 500;
+  transition: all 0.35s ease;
+}
+.lekene-map-card:hover .lekene-map-pin {
+  background: var(--gold);
+  color: var(--charcoal);
+  border-color: var(--gold);
+}
+
+/* FOOTER */
+.lekene-footer {
+  background: var(--charcoal);
+  color: var(--cream);
+  position: relative;
+}
+.lekene-footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold) 50%, transparent);
+  opacity: 0.5;
+}
+
+/* Selection */
+.lekene-root ::selection {
+  background: var(--gold);
+  color: var(--charcoal);
+}
+
+/* Small refinements */
+@media (max-width: 1024px) {
+  .lekene-hero-chip-1 { left: -2%; top: 4%; }
+  .lekene-hero-chip-2 { right: -2%; bottom: 6%; }
+}
+@media (max-width: 640px) {
+  .lekene-hero-chip { font-size: 0.85rem; padding: 0.55rem 0.95rem; }
+  .lekene-hero-chip-1 { left: 2%; top: -8px; }
+  .lekene-hero-chip-2 { right: 2%; bottom: -8px; }
+}
