@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/le-kene-hsr-website/static/css/main.7a4a9be1.css",
+    "main.js": "/le-kene-hsr-website/static/js/main.40aa083c.js",
+    "index.html": "/le-kene-hsr-website/index.html",
+    "main.7a4a9be1.css.map": "/le-kene-hsr-website/static/css/main.7a4a9be1.css.map",
+    "main.40aa083c.js.map": "/le-kene-hsr-website/static/js/main.40aa083c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7a4a9be1.css",
+    "static/js/main.40aa083c.js"
+  ]
+}
